@@ -1,0 +1,4 @@
+Flag --components-path has been deprecated, use --resources-path
+The App process exited with error: exit status 0xc000013a
+Error exiting Dapr: TerminateProcess: Access is denied.
+Error exiting App: exit status 0xc000013a
