@@ -190,4 +190,47 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
+
+    #region Aliases
+
+    public static IServiceCollection EasyCoreDapr(
+        this IHostApplicationBuilder builder,
+        Action<DaprOptions>? configure = null)
+        => builder.AddEasyCoreDapr(configure);
+
+    public static IServiceCollection EasyCoreDapr(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<DaprOptions>? configure = null)
+        => services.AddEasyCoreDapr(configuration, configure);
+
+    public static IServiceCollection EasyCoreDaprInvocation(this IServiceCollection services)
+        => services.AddEasyCoreDaprInvocation();
+
+    public static IServiceCollection EasyCoreDaprState(this IServiceCollection services)
+        => services.AddEasyCoreDaprState();
+
+    public static IServiceCollection EasyCoreDaprPubSub(this IServiceCollection services)
+        => services.AddEasyCoreDaprPubSub();
+
+    public static IServiceCollection EasyCoreDaprSecrets(this IServiceCollection services)
+        => services.AddEasyCoreDaprSecrets();
+
+    public static IServiceCollection EasyCoreDaprBindings(this IServiceCollection services)
+        => services.AddEasyCoreDaprBindings();
+
+    public static IServiceCollection EasyCoreDaprAll(this IServiceCollection services)
+        => services.AddEasyCoreDaprAll();
+
+    public static IServiceCollection EasyCoreDaprActors(
+        this IServiceCollection services,
+        Action<EasyCoreDaprActorOptions>? configure = null)
+        => services.AddEasyCoreDaprActors(configure);
+
+    public static IServiceCollection EasyCoreDaprWorkflow(
+        this IServiceCollection services,
+        Action<EasyCoreDaprWorkflowOptions>? configure = null)
+        => services.AddEasyCoreDaprWorkflow(configure);
+
+    #endregion
 }
